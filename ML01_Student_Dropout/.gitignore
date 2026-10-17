@@ -1,0 +1,12 @@
+# Python virtual environment
+.venv/
+venv/
+__pycache__/
+
+# Large data & trained models
+data/raw/*.csv
+models/*.pkl
+
+# OS temp files
+.DS_Store
+Thumbs.db
