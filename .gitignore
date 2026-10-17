@@ -1,3 +1,6 @@
 .vs/
 /.vs/slnx.sqlite
 /.vs/VSWorkspaceState.json.venv/
+.venv/
+venv/
+*.zip
