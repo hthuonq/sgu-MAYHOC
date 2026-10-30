@@ -1,0 +1,37 @@
+﻿Feature,Group,Unique_values_in_development
+Marital status,Categorical,6
+Application mode,Categorical,18
+Course,Categorical,17
+Previous qualification,Categorical,17
+Nacionality,Categorical,19
+Mother's qualification,Categorical,28
+Father's qualification,Categorical,32
+Mother's occupation,Categorical,31
+Father's occupation,Categorical,41
+Daytime/evening attendance,Binary,2
+Displaced,Binary,2
+Educational special needs,Binary,2
+Debtor,Binary,2
+Tuition fees up to date,Binary,2
+Gender,Binary,2
+Scholarship holder,Binary,2
+International,Binary,2
+Application order,Numeric,8
+Previous qualification (grade),Numeric,99
+Admission grade,Numeric,591
+Age at enrollment,Numeric,46
+Unemployment rate,Numeric,10
+Inflation rate,Numeric,9
+GDP,Numeric,10
+Curricular units 1st sem (credited),Numeric,21
+Curricular units 1st sem (enrolled),Numeric,23
+Curricular units 1st sem (evaluations),Numeric,35
+Curricular units 1st sem (approved),Numeric,23
+Curricular units 1st sem (grade),Numeric,683
+Curricular units 1st sem (without evaluations),Numeric,11
+Curricular units 2nd sem (credited),Numeric,19
+Curricular units 2nd sem (enrolled),Numeric,22
+Curricular units 2nd sem (evaluations),Numeric,30
+Curricular units 2nd sem (approved),Numeric,20
+Curricular units 2nd sem (grade),Numeric,674
+Curricular units 2nd sem (without evaluations),Numeric,10
