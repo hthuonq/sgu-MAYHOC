@@ -1,0 +1,3 @@
+﻿model,data,features,cv_macro_f1,oof_recall_dropout,oof_recall_enrolled,oof_recall_graduate,class_weight
+SVM goc (balanced),A,36,0.7153636225254717,0.7361477572559367,0.5952755905511811,0.8324844368986983,balanced
+SVM thu (None),A,36,0.7053813576809836,0.7607739665787159,0.4078740157480315,0.9202037351443124,None
