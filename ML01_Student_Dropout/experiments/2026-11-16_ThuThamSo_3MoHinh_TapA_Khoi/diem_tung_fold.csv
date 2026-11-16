@@ -1,0 +1,31 @@
+﻿model,data,fold,macro_f1,configuration
+Logistic Regression - Gốc,A,1,0.720933283269867,Gốc
+Logistic Regression - Gốc,A,2,0.7323395927884415,Gốc
+Logistic Regression - Gốc,A,3,0.7008049885554043,Gốc
+Logistic Regression - Gốc,A,4,0.6980451215833524,Gốc
+Logistic Regression - Gốc,A,5,0.6955608663443901,Gốc
+Logistic Regression - Thử,A,1,0.7218258850370134,Thử
+Logistic Regression - Thử,A,2,0.7360038932975389,Thử
+Logistic Regression - Thử,A,3,0.7040993820232081,Thử
+Logistic Regression - Thử,A,4,0.6912072194602601,Thử
+Logistic Regression - Thử,A,5,0.691137850582353,Thử
+Random Forest - Gốc,A,1,0.7400312397891523,Gốc
+Random Forest - Gốc,A,2,0.7242266474313473,Gốc
+Random Forest - Gốc,A,3,0.7564386740353087,Gốc
+Random Forest - Gốc,A,4,0.6848707978950624,Gốc
+Random Forest - Gốc,A,5,0.7080440646737901,Gốc
+Random Forest - Thử,A,1,0.7411144360417871,Thử
+Random Forest - Thử,A,2,0.7313891335343108,Thử
+Random Forest - Thử,A,3,0.7443962284916119,Thử
+Random Forest - Thử,A,4,0.6858698130240137,Thử
+Random Forest - Thử,A,5,0.6939693257365377,Thử
+SVM - Gốc,A,1,0.7267319211184556,Gốc
+SVM - Gốc,A,2,0.7118754057461133,Gốc
+SVM - Gốc,A,3,0.7270872246453295,Gốc
+SVM - Gốc,A,4,0.7007511797523893,Gốc
+SVM - Gốc,A,5,0.7103723813650706,Gốc
+SVM - Thử,A,1,0.7267319211184556,Thử
+SVM - Thử,A,2,0.7118754057461133,Thử
+SVM - Thử,A,3,0.7270872246453295,Thử
+SVM - Thử,A,4,0.7007511797523893,Thử
+SVM - Thử,A,5,0.7103723813650706,Thử
