@@ -1,63 +1,76 @@
 # ML01 — Dự đoán trạng thái học tập của sinh viên
 
-Báo cáo tiến độ giữa kỳ môn Máy học · Nhóm 08 · Lớp DCT124C3
+Nhóm 08 - Lớp DCT124C3
 
-Đề tài dự đoán một trong ba trạng thái của sinh viên gồm Dropout (bỏ học), Enrolled (đang học) và Graduate (tốt nghiệp). Bộ dữ liệu có 4.424 mẫu và 36 đặc trưng đầu vào. Nguồn dữ liệu là [Predict Students’ Dropout and Academic Success — UCI Machine Learning Repository](https://doi.org/10.24432/C5MC89).
+Dự án dùng dữ liệu tuyển sinh và học tập để dự đoán ba trạng thái: **bỏ học (Dropout)**, **đang học (Enrolled)** và **tốt nghiệp (Graduate)**. Nhóm so sánh Logistic Regression, Random Forest, SVM và XGBoost để khảo sát liệu hai đặc trưng bổ sung từ học kỳ 1 có cải thiện kết quả phân loại hay không. 
+Nguồn dữ liệu là [Predict Students’ Dropout and Academic Success — UCI Machine Learning Repository](https://doi.org/10.24432/C5MC89).
 
-## Thành viên và phân công thực nghiệm
 
-| Thành viên | MSSV | Phụ trách |
-|---|---|---|
-| Lê Đỗ Hòa Thương | 3124411304 | Random Forest |
-| Nguyễn Hoàng Khởi | 3124411137 | XGBoost |
-| Huỳnh Lê Khánh Ly | 3124411160 | Logistic Regression |
-| Trần Minh Triết (nhóm trưởng) | 3124411321 | SVM (RBF) |
+## Demo Streamlit
 
-## Cấu trúc dự án
+Chọn một hồ sơ mẫu để xem số môn đăng ký, số môn đạt và điểm học kỳ 1. Hồ sơ mẫu được đọc từ `development.csv`. Bản hiện tại hiển thị thông tin hồ sơ và thông báo trạng thái khi bấm **Dự đoán**. Nhóm sẽ kết nối mô hình sau khi chốt cấu hình bằng CV.
 
-| Đường dẫn | Nội dung |
-|---|---|
-| `data/raw/student_dropout.csv` | Dữ liệu gốc từ UCI |
-| `data/processed/` | `development.csv` (3.539 mẫu) và `test.csv` (885 mẫu) |
-| `notebooks/` | Notebook EDA và bốn notebook thực nghiệm |
-| `src/evaluate.py` | Tiện ích Python liên quan đến đánh giá và nhật ký |
-| `experiments/` | Nhật ký Excel, CSV kết quả tìm kiếm và báo cáo OOF theo thành viên |
-| `report/figures/` | Biểu đồ EDA và biểu đồ kết quả thực nghiệm |
-| `report/tables/` | Bảng thống kê xuất từ notebook EDA |
-| `models/` | Pipeline ứng viên `candidate_pipeline.joblib` và `metadata.json` trong các thư mục `thuong/`, `khoi/`, `ly/`, `triet/` |
-| `requirements.txt`, `requirements_training.txt` | Danh sách thư viện và khoảng phiên bản dùng khi chạy notebook |
+## Kết quả thực nghiệm
 
-## Cài đặt và chạy lại
+**A** gồm 36 đặc trưng gốc. **A+B** thêm tỷ lệ môn đạt học kỳ 1 và cờ đăng ký 0 môn học kỳ 1. Bảng dưới dùng các kết quả đối chiếu A và A+B trong `experiments/feature_b`, với CV phân tầng 5 fold trên tập development.
 
-Mở thư mục `ML01_Student_Dropout` trong VS Code. Tại PowerShell trong thư mục này, tạo môi trường Python và cài các thư viện:
+| Mô hình | CV Macro-F1 trên A | CV Macro-F1 trên A+B | Chênh lệch A+B − A |
+| --- | ---: | ---: | ---: |
+| Logistic Regression | 0.717353 | 0.717317 | −0.000037 |
+| Random Forest | 0.716244 | **0.723427** | **+0.007183** |
+| SVM (RBF) | 0.715364 | 0.717298 | +0.001934 |
+| XGBoost | 0.713649 | 0.708953 | −0.004696 |
+
+Random Forest cải thiện nhiều nhất trong lượt đối chiếu này, khoảng **0,72 điểm phần trăm Macro-F1**. SVM tăng nhẹ, Logistic Regression gần như giữ nguyên và XGBoost giảm. Hiệu quả của hai đặc trưng bổ sung vì vậy thay đổi theo mô hình. [Xem CSV tổng hợp và điểm từng fold](experiments/feature_b/).
+
+### Thử siêu tham số trên A+B
+
+![Biểu đồ so sánh CV Macro-F1 của bốn cấu hình thử trên A+B](experiments/2026-11-14_ThuThamSo_4MoHinh_TapAB_Thuong/so_sanh_macro_f1.png)
+
+Trong lượt thử trên biểu đồ, **Random Forest 300 cây** dẫn đầu với **0.722734**, gần với cấu hình 200 cây (**0.723427**). XGBoost đạt **0.717022**, tăng khoảng **0,81 điểm phần trăm** so với cấu hình đối chiếu trên A+B. [Xem notebook, bảng kết quả và biểu đồ của lượt thử](experiments/2026-11-14_ThuThamSo_4MoHinh_TapAB_Thuong/).
+
+Các số trên là **điểm CV trên development**. Nhóm sẽ cập nhật bảng điểm trên tập test sau khi chốt đủ cấu hình.
+
+## Dữ liệu và cách đánh giá
+
+Dữ liệu có **4.424 mẫu**, chia thành **3.539 mẫu development** và **885 mẫu test** theo nhãn với seed 42. Nhóm dùng development để chọn cấu hình theo CV Macro-F1. Sau khi chốt, notebook đánh giá cuối huấn luyện lại trên toàn bộ development và tính Macro-F1 cùng Recall lớp Dropout trên test. [Nguồn dữ liệu UCI](https://doi.org/10.24432/C5MC89).
+
+## Cài đặt và chạy demo
+
+Mở PowerShell tại thư mục `ML01_Student_Dropout`. Dùng Python 3.12 và chạy:
 
 ```powershell
-python -m venv .venv
+py -3.12 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt -r requirements_training.txt
+.\.venv\Scripts\python.exe -m streamlit run .\app\app.py
 ```
 
-Trong VS Code, mở notebook và chọn kernel Python thuộc môi trường `.venv`. Chạy các ô theo thứ tự từ trên xuống.
+Nếu đã dùng `.venv` ở thư mục gốc `sgu-MAYHOC`, chạy từ thư mục gốc:
 
-1. Chạy `notebooks/01_eda.ipynb` để khảo sát dữ liệu và tạo hai tập CSV trong `data/processed/`.
-2. Sau khi có `development.csv`, chạy các notebook mô hình. Các notebook này dùng chung dữ liệu phát triển và có thể chạy độc lập với nhau.
-   - `notebooks/02_random_forest.ipynb`
-   - `notebooks/03_xgboost.ipynb`
-   - `notebooks/04_logistic_regression.ipynb`
-   - `notebooks/05_svm.ipynb`
-3. Xem kết quả và nhật ký trong `experiments/`, biểu đồ trong `report/figures/` và cấu hình ứng viên trong `models/`. Nếu cần đối chiếu môi trường dùng để lưu một pipeline, xem phiên bản scikit-learn trong `metadata.json` của mô hình tương ứng.
+```powershell
+.\.venv\Scripts\python.exe -m streamlit run .\ML01_Student_Dropout\app\app.py
+```
 
-Ô vẽ biểu đồ GridSearchCV trong notebook Random Forest đọc CSV của lượt thực nghiệm dùng trong báo cáo. Giữ file `experiments/thuong/20261031_144833_3c4529_grid_search.csv` để chạy ô này. Khi muốn vẽ kết quả của lượt mới, cập nhật `csv_path` trong ô vẽ sang file `*_grid_search.csv` vừa sinh ra.
+Mở **Local URL** hiện trong Terminal, chọn hồ sơ mẫu, rồi bấm **Dự đoán**. Nhấn `Ctrl+C` trong Terminal để dừng ứng dụng.
 
-## Thiết kế và kết quả giữa kỳ
+### Chạy notebook đánh giá cuối
 
-Nhóm chia dữ liệu theo tỷ lệ 80/20 có phân tầng theo nhãn, với `random_state=42`. Bốn mô hình dùng cùng tập phát triển và đánh giá chéo phân tầng 5 fold với seed 42. Macro-F1 là chỉ số chính để chọn siêu tham số. Nhóm sử dụng dự đoán ngoài fold (OOF) để phân tích lỗi theo từng lớp.
+1. Kiểm tra `data/processed/development.csv` và `data/processed/test.csv`. Nếu thiếu, chạy [notebook EDA](notebooks/01_eda.ipynb) để chuẩn bị dữ liệu.
+2. Mở [notebook đánh giá cuối](notebooks/06_final_evaluation.ipynb) trong VS Code và chọn kernel của môi trường đã cài thư viện.
+3. Điền 8 cấu hình đã chốt và điểm CV vào Cell 7, rồi chọn **Run All**. Notebook xuất `final_test_results.csv` ở thư mục dự án.
 
-| Mô hình | CV Macro-F1 ban đầu | CV Macro-F1 sau tinh chỉnh |
-|---|---:|---:|
-| Dummy (mốc đối chứng) | 0,2220 | — |
-| Logistic Regression | 0,7013 | 0,7174 |
-| Random Forest | 0,6766 | 0,7162 |
-| XGBoost | 0,7063 | 0,7136 |
-| SVM (RBF) | 0,6858 | 0,7154 |
+## Cấu trúc mã nguồn
 
-Logistic Regression hiện đạt CV Macro-F1 cao nhất trong các cấu hình đã thử. Kết quả giữa kỳ sử dụng 36 đặc trưng gốc. Tỷ lệ học phần đạt trong học kỳ 1 mới được khảo sát ở bước EDA và sẽ được đánh giá trong thực nghiệm bổ sung. Tập test 885 mẫu được giữ riêng để đánh giá sau khi chốt mô hình.
+| Thư mục | Nội dung |
+| --- | --- |
+| `app/` | Giao diện Streamlit |
+| `data/` | Dữ liệu gốc và dữ liệu đã chia |
+| `notebooks/` | EDA, thực nghiệm mô hình và đánh giá cuối |
+| `feature_b/`, `src/` | Tạo đặc trưng, tiền xử lý và tiện ích đánh giá |
+| `experiments/` | Notebook thực nghiệm, bảng điểm và biểu đồ |
+| `models/` | Pipeline đã lưu và thông tin mô hình |
+| `report/` | Hình và bảng phục vụ báo cáo |
+
+## Tài liệu và minh chứng
+
+- [Thư mục minh chứng trên Google Drive](https://drive.google.com/drive/folders/11ipTv80foNjFz6ELOgofEmopy6BNhIwi?usp=sharing)
