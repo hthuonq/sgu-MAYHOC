@@ -1,41 +1,41 @@
 ﻿model,data,fold,macro_f1,configuration,changed_parameter
-Logistic Regression,A+B,1,0.7314504506795906,Gốc,class_weight: balanced -> None
-Logistic Regression,A+B,2,0.7346342006091563,Gốc,class_weight: balanced -> None
-Logistic Regression,A+B,3,0.722950448077286,Gốc,class_weight: balanced -> None
-Logistic Regression,A+B,4,0.6959774873216458,Gốc,class_weight: balanced -> None
-Logistic Regression,A+B,5,0.7015703317626006,Gốc,class_weight: balanced -> None
-Logistic Regression,A+B,1,0.7302390281973206,Thử,class_weight: balanced -> None
-Logistic Regression,A+B,2,0.6796919642012451,Thử,class_weight: balanced -> None
-Logistic Regression,A+B,3,0.6895450806849791,Thử,class_weight: balanced -> None
-Logistic Regression,A+B,4,0.6882304252572302,Thử,class_weight: balanced -> None
-Logistic Regression,A+B,5,0.6811073683047096,Thử,class_weight: balanced -> None
-Random Forest,A+B,1,0.708775450922325,Gốc,min_samples_leaf: 1 -> 3
-Random Forest,A+B,2,0.6869562911319083,Gốc,min_samples_leaf: 1 -> 3
-Random Forest,A+B,3,0.7015923406399597,Gốc,min_samples_leaf: 1 -> 3
-Random Forest,A+B,4,0.6633669772256728,Gốc,min_samples_leaf: 1 -> 3
-Random Forest,A+B,5,0.6963581739246574,Gốc,min_samples_leaf: 1 -> 3
-Random Forest,A+B,1,0.7281869413530856,Thử,min_samples_leaf: 1 -> 3
-Random Forest,A+B,2,0.7315071324250457,Thử,min_samples_leaf: 1 -> 3
-Random Forest,A+B,3,0.7264914922391329,Thử,min_samples_leaf: 1 -> 3
-Random Forest,A+B,4,0.6835025633121848,Thử,min_samples_leaf: 1 -> 3
-Random Forest,A+B,5,0.6944062421941325,Thử,min_samples_leaf: 1 -> 3
-XGBoost,A+B,1,0.7228028025111067,Gốc,colsample_bytree: 1.0 -> 0.8
-XGBoost,A+B,2,0.7026246021563995,Gốc,colsample_bytree: 1.0 -> 0.8
-XGBoost,A+B,3,0.7251088992290017,Gốc,colsample_bytree: 1.0 -> 0.8
-XGBoost,A+B,4,0.7075314617036526,Gốc,colsample_bytree: 1.0 -> 0.8
-XGBoost,A+B,5,0.7127244224211449,Gốc,colsample_bytree: 1.0 -> 0.8
-XGBoost,A+B,1,0.7144652126319754,Thử,colsample_bytree: 1.0 -> 0.8
-XGBoost,A+B,2,0.6992554062460687,Thử,colsample_bytree: 1.0 -> 0.8
-XGBoost,A+B,3,0.721847272072155,Thử,colsample_bytree: 1.0 -> 0.8
-XGBoost,A+B,4,0.6996741373650465,Thử,colsample_bytree: 1.0 -> 0.8
-XGBoost,A+B,5,0.7199244049977441,Thử,colsample_bytree: 1.0 -> 0.8
-SVM,A+B,1,0.7309714393179959,Gốc,C: 10 -> 5
-SVM,A+B,2,0.7095273012729592,Gốc,C: 10 -> 5
-SVM,A+B,3,0.7328011391785956,Gốc,C: 10 -> 5
-SVM,A+B,4,0.7013385875849246,Gốc,C: 10 -> 5
-SVM,A+B,5,0.7118501155057347,Gốc,C: 10 -> 5
-SVM,A+B,1,0.7279798524034025,Thử,C: 10 -> 5
-SVM,A+B,2,0.7338076308610423,Thử,C: 10 -> 5
-SVM,A+B,3,0.7245584433479637,Thử,C: 10 -> 5
-SVM,A+B,4,0.7039842410806587,Thử,C: 10 -> 5
-SVM,A+B,5,0.7164543822100219,Thử,C: 10 -> 5
+Logistic Regression,A+B,1,0.7314504506795906,Gốc,C: 0.1 -> 0.8
+Logistic Regression,A+B,2,0.7346342006091563,Gốc,C: 0.1 -> 0.8
+Logistic Regression,A+B,3,0.722950448077286,Gốc,C: 0.1 -> 0.8
+Logistic Regression,A+B,4,0.6959774873216458,Gốc,C: 0.1 -> 0.8
+Logistic Regression,A+B,5,0.7015703317626006,Gốc,C: 0.1 -> 0.8
+Logistic Regression,A+B,1,0.7172251974467164,Thử,C: 0.1 -> 0.8
+Logistic Regression,A+B,2,0.7375540466746155,Thử,C: 0.1 -> 0.8
+Logistic Regression,A+B,3,0.7103960252289756,Thử,C: 0.1 -> 0.8
+Logistic Regression,A+B,4,0.7010647480661828,Thử,C: 0.1 -> 0.8
+Logistic Regression,A+B,5,0.696782833584022,Thử,C: 0.1 -> 0.8
+Random Forest,A+B,1,0.6947272986169671,Gốc,n_estimators: 200 -> 400
+Random Forest,A+B,2,0.6910411926759544,Gốc,n_estimators: 200 -> 400
+Random Forest,A+B,3,0.7045759606850387,Gốc,n_estimators: 200 -> 400
+Random Forest,A+B,4,0.6629755397925837,Gốc,n_estimators: 200 -> 400
+Random Forest,A+B,5,0.6915582286216816,Gốc,n_estimators: 200 -> 400
+Random Forest,A+B,1,0.7058487227202529,Thử,n_estimators: 200 -> 400
+Random Forest,A+B,2,0.6912436277235622,Thử,n_estimators: 200 -> 400
+Random Forest,A+B,3,0.7074123336845983,Thử,n_estimators: 200 -> 400
+Random Forest,A+B,4,0.6622928534083202,Thử,n_estimators: 200 -> 400
+Random Forest,A+B,5,0.6986519738135301,Thử,n_estimators: 200 -> 400
+SVM,A+B,1,0.7309714393179959,Gốc,gamma: 0.01 -> 0.005
+SVM,A+B,2,0.7095273012729592,Gốc,gamma: 0.01 -> 0.005
+SVM,A+B,3,0.7328011391785956,Gốc,gamma: 0.01 -> 0.005
+SVM,A+B,4,0.7013385875849246,Gốc,gamma: 0.01 -> 0.005
+SVM,A+B,5,0.7118501155057347,Gốc,gamma: 0.01 -> 0.005
+SVM,A+B,1,0.7221300004825556,Thử,gamma: 0.01 -> 0.005
+SVM,A+B,2,0.7307040879666578,Thử,gamma: 0.01 -> 0.005
+SVM,A+B,3,0.7340941798321046,Thử,gamma: 0.01 -> 0.005
+SVM,A+B,4,0.7088736333587592,Thử,gamma: 0.01 -> 0.005
+SVM,A+B,5,0.7196087828811638,Thử,gamma: 0.01 -> 0.005
+XGBoost,A+B,1,0.7273227708668255,Gốc,max_depth: 6 -> 7
+XGBoost,A+B,2,0.6857919751568842,Gốc,max_depth: 6 -> 7
+XGBoost,A+B,3,0.7119167093360642,Gốc,max_depth: 6 -> 7
+XGBoost,A+B,4,0.7024838900998054,Gốc,max_depth: 6 -> 7
+XGBoost,A+B,5,0.7172512126185612,Gốc,max_depth: 6 -> 7
+XGBoost,A+B,1,0.7211544694083125,Thử,max_depth: 6 -> 7
+XGBoost,A+B,2,0.6969208444446512,Thử,max_depth: 6 -> 7
+XGBoost,A+B,3,0.7299326822774147,Thử,max_depth: 6 -> 7
+XGBoost,A+B,4,0.7092375025514815,Thử,max_depth: 6 -> 7
+XGBoost,A+B,5,0.7156117822860472,Thử,max_depth: 6 -> 7

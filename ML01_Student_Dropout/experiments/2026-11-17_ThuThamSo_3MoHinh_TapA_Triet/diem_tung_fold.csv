@@ -1,31 +1,31 @@
-﻿model,data,fold,macro_f1,configuration
-Logistic Regression,A,1,0.7316370548360392,Goc
-Logistic Regression,A,2,0.7399313826323121,Goc
-Logistic Regression,A,3,0.7229027339564484,Goc
-Logistic Regression,A,4,0.6984630194624502,Goc
-Logistic Regression,A,5,0.6938332929151022,Goc
-Logistic Regression,A,1,0.7267290033078405,Thu
-Logistic Regression,A,2,0.7434041678536977,Thu
-Logistic Regression,A,3,0.7229027339564484,Thu
-Logistic Regression,A,4,0.6991604841433258,Thu
-Logistic Regression,A,5,0.69439899424092,Thu
-Random Forest,A,1,0.6954953029171854,Goc
-Random Forest,A,2,0.6776953180507584,Goc
-Random Forest,A,3,0.692411358053136,Goc
-Random Forest,A,4,0.6376079793010833,Goc
-Random Forest,A,5,0.6790325182645089,Goc
-Random Forest,A,1,0.7106693749130337,Thu
-Random Forest,A,2,0.687488569582052,Thu
-Random Forest,A,3,0.6932259610032147,Thu
-Random Forest,A,4,0.6868437660772709,Thu
-Random Forest,A,5,0.726719073907693,Thu
-XGBoost,A,1,0.7014722313174692,Goc
-XGBoost,A,2,0.6920214045214045,Goc
-XGBoost,A,3,0.7259885195402153,Goc
-XGBoost,A,4,0.6925366782601751,Goc
-XGBoost,A,5,0.7194458627192963,Goc
-XGBoost,A,1,0.7167306516537301,Thu
-XGBoost,A,2,0.6916862921506884,Thu
-XGBoost,A,3,0.7080557717598434,Thu
-XGBoost,A,4,0.6899281778398104,Thu
-XGBoost,A,5,0.7215167691749311,Thu
+﻿model,data,fold,macro_f1,configuration,changed_parameter
+Logistic Regression,A,1,0.7316370548360392,Gốc,max_iter: 3000 -> 2000
+Logistic Regression,A,2,0.7399313826323121,Gốc,max_iter: 3000 -> 2000
+Logistic Regression,A,3,0.7229027339564484,Gốc,max_iter: 3000 -> 2000
+Logistic Regression,A,4,0.6984630194624502,Gốc,max_iter: 3000 -> 2000
+Logistic Regression,A,5,0.6938332929151022,Gốc,max_iter: 3000 -> 2000
+Logistic Regression,A,1,0.7316370548360392,Thử,max_iter: 3000 -> 2000
+Logistic Regression,A,2,0.7399313826323121,Thử,max_iter: 3000 -> 2000
+Logistic Regression,A,3,0.7229027339564484,Thử,max_iter: 3000 -> 2000
+Logistic Regression,A,4,0.6984630194624502,Thử,max_iter: 3000 -> 2000
+Logistic Regression,A,5,0.6938332929151022,Thử,max_iter: 3000 -> 2000
+Random Forest,A,1,0.6954953029171854,Gốc,max_depth: None -> 15
+Random Forest,A,2,0.6776953180507584,Gốc,max_depth: None -> 15
+Random Forest,A,3,0.692411358053136,Gốc,max_depth: None -> 15
+Random Forest,A,4,0.6376079793010833,Gốc,max_depth: None -> 15
+Random Forest,A,5,0.6790325182645089,Gốc,max_depth: None -> 15
+Random Forest,A,1,0.7211859033359923,Thử,max_depth: None -> 15
+Random Forest,A,2,0.7172936991756522,Thử,max_depth: None -> 15
+Random Forest,A,3,0.7423858932529216,Thử,max_depth: None -> 15
+Random Forest,A,4,0.6812999666541192,Thử,max_depth: None -> 15
+Random Forest,A,5,0.7067126639047104,Thử,max_depth: None -> 15
+XGBoost,A,1,0.7228164135447929,Gốc,n_estimators: 150 -> 200
+XGBoost,A,2,0.6976845632276677,Gốc,n_estimators: 150 -> 200
+XGBoost,A,3,0.7224999448133999,Gốc,n_estimators: 150 -> 200
+XGBoost,A,4,0.691658136612265,Gốc,n_estimators: 150 -> 200
+XGBoost,A,5,0.7335868736934369,Gốc,n_estimators: 150 -> 200
+XGBoost,A,1,0.7163218949003433,Thử,n_estimators: 150 -> 200
+XGBoost,A,2,0.69355383188551,Thử,n_estimators: 150 -> 200
+XGBoost,A,3,0.730768585424349,Thử,n_estimators: 150 -> 200
+XGBoost,A,4,0.6893556809644054,Thử,n_estimators: 150 -> 200
+XGBoost,A,5,0.7235469243095425,Thử,n_estimators: 150 -> 200
