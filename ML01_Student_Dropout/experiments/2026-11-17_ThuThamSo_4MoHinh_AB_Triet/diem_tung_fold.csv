@@ -9,16 +9,16 @@ Logistic Regression,A+B,2,0.6796919642012451,Thử,class_weight: balanced -> Non
 Logistic Regression,A+B,3,0.6895450806849791,Thử,class_weight: balanced -> None
 Logistic Regression,A+B,4,0.6882304252572302,Thử,class_weight: balanced -> None
 Logistic Regression,A+B,5,0.6811073683047096,Thử,class_weight: balanced -> None
-Random Forest,A+B,1,0.708775450922325,Gốc,max_depth: None -> 12
-Random Forest,A+B,2,0.6869562911319083,Gốc,max_depth: None -> 12
-Random Forest,A+B,3,0.7015923406399597,Gốc,max_depth: None -> 12
-Random Forest,A+B,4,0.6633669772256728,Gốc,max_depth: None -> 12
-Random Forest,A+B,5,0.6963581739246574,Gốc,max_depth: None -> 12
-Random Forest,A+B,1,0.713481477068748,Thử,max_depth: None -> 12
-Random Forest,A+B,2,0.7399407160617827,Thử,max_depth: None -> 12
-Random Forest,A+B,3,0.7228976150158477,Thử,max_depth: None -> 12
-Random Forest,A+B,4,0.6823440758117224,Thử,max_depth: None -> 12
-Random Forest,A+B,5,0.7082664778740634,Thử,max_depth: None -> 12
+Random Forest,A+B,1,0.708775450922325,Gốc,min_samples_leaf: 1 -> 3
+Random Forest,A+B,2,0.6869562911319083,Gốc,min_samples_leaf: 1 -> 3
+Random Forest,A+B,3,0.7015923406399597,Gốc,min_samples_leaf: 1 -> 3
+Random Forest,A+B,4,0.6633669772256728,Gốc,min_samples_leaf: 1 -> 3
+Random Forest,A+B,5,0.6963581739246574,Gốc,min_samples_leaf: 1 -> 3
+Random Forest,A+B,1,0.7281869413530856,Thử,min_samples_leaf: 1 -> 3
+Random Forest,A+B,2,0.7315071324250457,Thử,min_samples_leaf: 1 -> 3
+Random Forest,A+B,3,0.7264914922391329,Thử,min_samples_leaf: 1 -> 3
+Random Forest,A+B,4,0.6835025633121848,Thử,min_samples_leaf: 1 -> 3
+Random Forest,A+B,5,0.6944062421941325,Thử,min_samples_leaf: 1 -> 3
 XGBoost,A+B,1,0.7228028025111067,Gốc,colsample_bytree: 1.0 -> 0.8
 XGBoost,A+B,2,0.7026246021563995,Gốc,colsample_bytree: 1.0 -> 0.8
 XGBoost,A+B,3,0.7251088992290017,Gốc,colsample_bytree: 1.0 -> 0.8
